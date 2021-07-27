@@ -1,9 +1,15 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Ionic Role Auth
+    </ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content>
-
+ 
+<ion-content padding>
+  <ion-button expand="full" (click)="signIn('admin')">Login as Admin</ion-button>
+  <ion-button expand="full" (click)="signIn('user')">Login as User</ion-button>
+ 
+  <ion-button expand="full" routerLink="/home">
+    Open home page (Authorized only)</ion-button>
 </ion-content>
