@@ -13,13 +13,20 @@
  
 <ion-content>
  
-  <ion-card>
+  <!-- Everything from before... -->
+ 
+  <ion-card *appHasPermission="['read']">
+    <ion-card-header>
+      <ion-card-title>My Content</ion-card-title>
+    </ion-card-header>
     <ion-card-content>
-      <p>Current user: {{ user | async | json }}</p>
+      Everyone can read this
+      <ion-button expand="full" *appHasPermission="['write']">
+        Admin action
+      </ion-button>
     </ion-card-content>
   </ion-card>
  
-  <ion-button expand="full" routerLink="/secret">
-    Open secret page (Admin only)</ion-button>
- 
+  <ion-button expand="full" appDisableRole disableForRole="USER">Action for Admins</ion-button>
+  <ion-button expand="full" appDisableRole disableForRole="ADMIN">Action for Users</ion-button>
 </ion-content>
