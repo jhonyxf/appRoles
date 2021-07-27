@@ -9,7 +9,8 @@ ionic g page pages/secret
 ionic g service services/auth
  
 ionic g module directives/SharedDirectives --flat
-ionic g directive directives/hasPermission   
+
+ionic g directive directives/hasPermission
 ionic g directive directives/disableRole
  
 # Guard to protect pages
